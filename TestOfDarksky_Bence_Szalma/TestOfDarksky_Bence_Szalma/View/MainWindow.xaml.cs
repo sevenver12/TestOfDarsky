@@ -10,10 +10,9 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TestOfDarksky_Bence_Szalma
+namespace TestOfDarksky_Bence_Szalma.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,6 +22,14 @@ namespace TestOfDarksky_Bence_Szalma
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+
+
+        private void LangBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Properties.Settings.Default.Culture = e.AddedItems[0].ToString();
+            Properties.Settings.Default.Save();
         }
     }
 }
