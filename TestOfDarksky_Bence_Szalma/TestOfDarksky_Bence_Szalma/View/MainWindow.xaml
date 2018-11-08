@@ -9,23 +9,65 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestOfDarksky_Bence_Szalma.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="300">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
+        Title="MainWindow">
+    <Window.Resources>
+        <Storyboard x:Key="OpenMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" >
+                <EasingDoubleKeyFrame KeyTime="0" Value="70"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="CloseMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="70"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Style x:Key="HamburgerStyle" TargetType="Grid">
+            <Style.Triggers>
+                <DataTrigger  Binding="{Binding RelativeSource={RelativeSource AncestorType=Window},Path=DataContext.StateClosed}" Value="True">
+                    <DataTrigger.EnterActions>
+                        <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
+                    </DataTrigger.EnterActions>
+                    <DataTrigger.ExitActions>
+                        <BeginStoryboard Storyboard="{StaticResource OpenMenu}"/>
 
-        </Grid.RowDefinitions>
-        <ToolBarTray>
-            <ToolBar>
-                <ComboBox ItemsSource="{Binding Source={x:Static lex:LocalizeDictionary.Instance}, Path=MergedAvailableCultures}"
-                          SelectedItem="{Binding Source={x:Static lex:LocalizeDictionary.Instance}, Path=Culture}" 
-                          DisplayMemberPath="NativeName" SelectionChanged="LangBox_SelectionChanged" />
-            </ToolBar>
-        </ToolBarTray>
-        <StackPanel Grid.Row="1">
-          
-            <TextBlock Text="{lex:Loc Wellcome}"/>
-        </StackPanel>
+                    </DataTrigger.ExitActions>
+                </DataTrigger>
+                <!--<DataTrigger  Binding="{Binding RelativeSource={RelativeSource AncestorType=Window},Path=DataContext.StateClosed}" Value="False">
+                    <DataTrigger.EnterActions>
+                        <BeginStoryboard Storyboard="{StaticResource OpenMenu}"/>
+
+                    </DataTrigger.EnterActions>
+                </DataTrigger>-->
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="#FF515151">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid Style="{StaticResource HamburgerStyle}"  HorizontalAlignment="Stretch"  x:Name="GridMenu" Background="#FF116FA4">
+            <Button Command="{Binding OpenHamburgerCommand}" x:Name="ButtonMenu" Background="White" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}" Width="70" Height="70" >
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Rectangle  Width="30" Height="5" Margin="0 0 0 0" Fill="#FF515151" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="-0,0.5"/>
+                    <Rectangle  Width="30" Height="5" Margin="0 20 0 0 " Fill="#FF515151" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="-0,0.5"/>
+                    <Rectangle  Width="30" Height="5" Margin="0 10 0 0" Fill="#FF515151" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                </Grid>
+            </Button>
+            <ListView ItemsSource="{Binding Countries}">
+                
+            </ListView>
+        </Grid>
+        <Frame Grid.Column="1" Margin="0,5,5,5" />
+
     </Grid>
+
+    <!--<ComboBox ItemsSource="{Binding Source={x:Static lex:LocalizeDictionary.Instance}, Path=MergedAvailableCultures}"
+                          SelectedItem="{Binding Source={x:Static lex:LocalizeDictionary.Instance}, Path=Culture}" 
+                          DisplayMemberPath="NativeName" SelectionChanged="LangBox_SelectionChanged" />-->
+
 </Window>
