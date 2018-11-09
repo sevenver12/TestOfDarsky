@@ -34,11 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
@@ -80,14 +76,25 @@
     <Compile Include="Interfaces\IDataService.cs" />
     <Compile Include="Interfaces\IWeatherService.cs" />
     <Compile Include="Model\City.cs" />
-    <Compile Include="Model\Country.cs" />
-    <Compile Include="Model\GeoLoc.cs" />
     <Compile Include="Model\CityInfo.cs" />
+    <Compile Include="Model\CityInfoWraper.cs" />
+    <Compile Include="Model\Country.cs" />
+    <Compile Include="Model\Currently.cs" />
+    <Compile Include="Model\Daily.cs" />
+    <Compile Include="Model\Datum.cs" />
+    <Compile Include="Model\GeoLoc.cs" />
     <Compile Include="Services\DarkSkyWeatherService.cs" />
     <Compile Include="Services\DumyCountryService.cs" />
+    <Compile Include="ViewModel\DetailsViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="View\DetailsPage.xaml.cs">
+      <DependentUpon>DetailsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WellcomePage.xaml.cs">
+      <DependentUpon>WellcomePage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -132,9 +139,17 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Page Include="View\DetailsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WellcomePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

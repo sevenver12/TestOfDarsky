@@ -9,5 +9,6 @@ namespace TestOfDarksky_Bence_Szalma.Interfaces
     public interface IWeatherService : IDataService<CityInfo>
     {
         City TrackedCity { get; set; }
+        string CopyRightInfo { get; }
     }
 }

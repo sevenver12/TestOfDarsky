@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,53 +7,25 @@ using System.Threading.Tasks;
 using TestOfDarksky_Bence_Szalma.Helper;
 namespace TestOfDarksky_Bence_Szalma.Model
 {
-    public class CityInfo : ObservableObject
+
+    public partial class CityInfo
     {
-        private decimal _temperature;
+        [JsonProperty("latitude")]
+        public double Latitude { get; set; }
 
-        public decimal Temperature
-        {
-            get { return _temperature; }
-            set { Set(ref _temperature, value); }
-        }
-        private decimal _apparentTemperature;
+        [JsonProperty("longitude")]
+        public double Longitude { get; set; }
 
-        public decimal ApparentTemperature
-        {
-            get { return _apparentTemperature; }
-            set { Set(ref _apparentTemperature, value); }
-        }
-        private decimal _pressure;
+        [JsonProperty("timezone")]
+        public string Timezone { get; set; }
 
-        public decimal Pressure
-        {
-            get { return _pressure; }
-            set { Set(ref _pressure, value); }
-        }
-        private decimal _windSpeed;
+        [JsonProperty("currently")]
+        public Currently Currently { get; set; }
 
-        public decimal WindSpeed
-        {
-            get { return _windSpeed; }
-            set { Set(ref _windSpeed, value); }
-        }
-        private decimal humidity;
+        [JsonProperty("daily")]
+        public Daily Daily { get; set; }
 
-        public decimal Humidity
-        {
-            get { return humidity; }
-            set { Set(ref humidity, value); }
-        }
-
-        private decimal uvIndex;
-
-        public decimal UvIndex
-        {
-            get { return uvIndex; }
-            set { Set(ref uvIndex, value); }
-        }
-
-
-
+        [JsonProperty("offset")]
+        public long Offset { get; set; }
     }
 }

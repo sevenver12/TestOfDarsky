@@ -25,7 +25,7 @@ namespace TestOfDarksky_Bence_Szalma.View
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = ViewModel = new MainWindowViewModel();
+            this.DataContext = ViewModel = new MainWindowViewModel(mainFrame);
             ViewModel.Initialize();
         }
 

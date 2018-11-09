@@ -61,7 +61,7 @@ namespace TestOfDarksky_Bence_Szalma.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Üdv.
+        ///   Looks up a localized string similar to Ez az aplikáció a Docler Holding nevű cég &quot;felvételi&quot; teszt aplikációja, kérem az őszinte viszajelzését, az applikációval kapcsolatban.
         /// </summary>
         public static string Wellcome {
             get {
