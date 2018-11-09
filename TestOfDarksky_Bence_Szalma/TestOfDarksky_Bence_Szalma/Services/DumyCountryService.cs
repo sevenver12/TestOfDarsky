@@ -72,12 +72,16 @@ namespace TestOfDarksky_Bence_Szalma.Services
                 new City
                 {
                     FName = "München",
-                    Country = ger
+                    Country = ger,
+                    Lat = 48.135125,
+                    Lon = 11.581981,
                 },
                 new City
                 {
                     FName = "Amsterdam",
                     Country = neth,
+                    Lat = 52.370216,
+                    Lon = 4.895168,
                 },
             };
         }
