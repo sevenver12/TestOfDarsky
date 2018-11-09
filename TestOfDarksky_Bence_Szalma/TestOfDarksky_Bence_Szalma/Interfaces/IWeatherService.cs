@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using TestOfDarksky_Bence_Szalma.Model;
 namespace TestOfDarksky_Bence_Szalma.Interfaces
 {
-    public interface IDataService<T> 
+    public interface IWeatherService : IDataService<CityInfo>
     {
-        Task<IEnumerable<T>> GetData();
-        //void RemoveElement(T item);
+        City TrackedCity { get; set; }
     }
 }

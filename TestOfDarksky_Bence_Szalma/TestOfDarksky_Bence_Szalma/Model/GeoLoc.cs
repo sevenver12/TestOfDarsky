@@ -16,7 +16,7 @@ namespace TestOfDarksky_Bence_Szalma.Model
             {
                 if (FName.Count() > 3)
                 {
-                    return FName.Take(3).ToString();
+                     return string.Concat(FName.Take(3));
                 }
                 else
                 {

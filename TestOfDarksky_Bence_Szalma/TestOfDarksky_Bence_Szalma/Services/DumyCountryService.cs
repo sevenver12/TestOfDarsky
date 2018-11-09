@@ -11,18 +11,18 @@ namespace TestOfDarksky_Bence_Szalma.Services
 {
     public class DumyCountryService : ICountryService
     {
-        public ICollection<City> GetData()
+        public Task<IEnumerable<City>> GetData()
         {
-            Country hun = new Country() { Name = "Hungary" };
-            Country lux = new Country() { Name = "Luxemburg" };
-            Country aust = new Country() { Name = "Ausztria" };
-            Country cz = new Country() { Name = "Czech" };
-            Country ger = new Country() { Name = "Germany" };
-            Country neth = new Country() { Name = "Netherlands" };
+            Country hun = new Country() { FName = "Hungary" };
+            Country lux = new Country() { FName = "Luxemburg" };
+            Country aust = new Country() { FName = "Ausztria" };
+            Country cz = new Country() { FName = "Czech" };
+            Country ger = new Country() { FName = "Germany" };
+            Country neth = new Country() { FName = "Netherlands" };
 
 
 
-            return new List<City>
+             var result = new List<City>
             {
                 new City
                 {
@@ -84,6 +84,7 @@ namespace TestOfDarksky_Bence_Szalma.Services
                     Lon = 4.895168,
                 },
             };
+            return Task.FromResult(result as IEnumerable<City>);
         }
 
         public ObservableCollection<City> ShortCountries(ICollection<City> list, Predicate<City> predicate)

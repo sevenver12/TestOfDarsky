@@ -25,21 +25,23 @@ namespace TestOfDarksky_Bence_Szalma.View
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new MainWindowViewModel();
+            this.DataContext = ViewModel = new MainWindowViewModel();
+            ViewModel.Initialize();
         }
 
-        
-
+        public MainWindowViewModel ViewModel { get; }
 
         private void LangBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Properties.Settings.Default.Culture = e.AddedItems[0].ToString();
             Properties.Settings.Default.Save();
         }
-        bool StateClosed = true;
-        private void ButtonMenu_Click(object sender, RoutedEventArgs e)
+
+        private  void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(CitiesLv.ItemsSource);
+            PropertyGroupDescription groupDescription = new PropertyGroupDescription("Country.SName");
+            view.GroupDescriptions.Add(groupDescription);
         }
     }
 }

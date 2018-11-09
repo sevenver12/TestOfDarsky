@@ -13,8 +13,10 @@
             Lat = lat;
             Country = country;
         }
+
         public double Lon { get; set; }
         public double Lat { get; set; }
         public Country Country { get; set; }
+
     }
 }

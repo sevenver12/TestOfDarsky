@@ -7,8 +7,8 @@ using TestOfDarksky_Bence_Szalma.Helper;
 
 namespace TestOfDarksky_Bence_Szalma.Model
 {
-    public class Country : ObservableObject
+    public class Country : GeoLoc
     {
-        public string Name { get; set; }
+
     }
 }

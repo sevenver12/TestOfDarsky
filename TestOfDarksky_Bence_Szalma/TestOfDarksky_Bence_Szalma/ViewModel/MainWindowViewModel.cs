@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,6 +8,9 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
 using TestOfDarksky_Bence_Szalma.Helper;
+using TestOfDarksky_Bence_Szalma.Interfaces;
+using TestOfDarksky_Bence_Szalma.Model;
+using TestOfDarksky_Bence_Szalma.Services;
 
 namespace TestOfDarksky_Bence_Szalma.ViewModel
 {
@@ -15,8 +19,17 @@ namespace TestOfDarksky_Bence_Szalma.ViewModel
         public MainWindowViewModel()
         {
             StateClosed = true;
-            StateOpen = false;
+            _countryService = new DumyCountryService();
         }
+
+        public async void Initialize()
+        {
+            Cities = new ObservableCollection<City>(await _countryService.GetData());
+
+        }
+        private ICountryService _countryService;
+        public ObservableCollection<City> Cities { get; set; }
+
 
         private ICommand _openHamburger;
 
@@ -27,9 +40,7 @@ namespace TestOfDarksky_Bence_Szalma.ViewModel
         //private bool StateClosed = true;
         private void HamburgerOpen()
         {
-           
             StateClosed = !StateClosed;
-            StateOpen = !StateOpen;
         }
         private bool _stateClosed;
 
@@ -39,13 +50,6 @@ namespace TestOfDarksky_Bence_Szalma.ViewModel
             set { Set(ref _stateClosed, value); }
         }
 
-        private bool _stateOpen;
-
-        public bool StateOpen
-        {
-            get { return _stateOpen; }
-            set { Set(ref _stateOpen, value); }
-        }
 
     }
 }
