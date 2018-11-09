@@ -88,14 +88,14 @@
                     </GroupStyle>
                 </ListView.GroupStyle>
             </ListView>
-            <Button Grid.Row="2" Height="40" />
+            <Button Command="{Binding WellcomeCommand}" HorizontalAlignment="Left" Background="White" Grid.Row="2" Height="40" Width="70">
+                <Image  Source="/TestOfDarksky_Bence_Szalma;component/Resources/Settings_black-512.png"/>
+            </Button>
         </Grid>
-        <Frame Grid.Column="1" NavigationUIVisibility="Hidden" x:Name="mainFrame" Margin="0,5,5,5" />
+        <Frame Grid.Column="1"  NavigationUIVisibility="Hidden" x:Name="mainFrame" Margin="0,5,5,5" />
 
     </Grid>
 
-    <!--<ComboBox ItemsSource="{Binding Source={x:Static lex:LocalizeDictionary.Instance}, Path=MergedAvailableCultures}"
-                          SelectedItem="{Binding Source={x:Static lex:LocalizeDictionary.Instance}, Path=Culture}" 
-                          DisplayMemberPath="NativeName" SelectionChanged="LangBox_SelectionChanged" />-->
+    
 
 </Window>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestOfDarksky_Bence_Szalma.ViewModel;
 
 namespace TestOfDarksky_Bence_Szalma.View
 {
@@ -20,9 +21,13 @@ namespace TestOfDarksky_Bence_Szalma.View
     /// </summary>
     public partial class DetailsPage : Page
     {
-        public DetailsPage()
+        public DetailsViewModel ViewModel { get; }
+
+        public DetailsPage(DetailsViewModel viewModel)
         {
             InitializeComponent();
+            DataContext = ViewModel = viewModel;
         }
+
     }
 }

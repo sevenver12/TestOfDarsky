@@ -27,15 +27,12 @@ namespace TestOfDarksky_Bence_Szalma.View
             InitializeComponent();
             this.DataContext = ViewModel = new MainWindowViewModel(mainFrame);
             ViewModel.Initialize();
+
         }
 
         public MainWindowViewModel ViewModel { get; }
 
-        private void LangBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            Properties.Settings.Default.Culture = e.AddedItems[0].ToString();
-            Properties.Settings.Default.Save();
-        }
+        
 
         private  void Window_Loaded(object sender, RoutedEventArgs e)
         {

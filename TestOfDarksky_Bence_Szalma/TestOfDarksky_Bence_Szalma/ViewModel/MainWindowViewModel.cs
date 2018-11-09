@@ -23,6 +23,13 @@ namespace TestOfDarksky_Bence_Szalma.ViewModel
             StateClosed = true;
             _countryService = new DumyCountryService();
             _mainFrame = mainframe;
+            ToWellcomePage();
+        }
+
+        private void ToWellcomePage()
+        {
+            _mainFrame.Navigate(new WellcomePage());
+
         }
 
         public async void Initialize()
@@ -47,7 +54,7 @@ namespace TestOfDarksky_Bence_Szalma.ViewModel
         private async Task LoadCity(City city)
         {
             await DetailsViewModel.GetData(city);
-            _mainFrame.Navigate(new DetailsPage());
+            _mainFrame.Navigate(new DetailsPage(DetailsViewModel));
         }
 
         private ICommand _openHamburger;
@@ -67,6 +74,13 @@ namespace TestOfDarksky_Bence_Szalma.ViewModel
         {
             get { return _stateClosed; }
             set { Set(ref _stateClosed, value); }
+        }
+
+        private ICommand _wellcomeCommand;
+
+        public ICommand WellcomeCommand
+        {
+            get { return _wellcomeCommand = _wellcomeCommand ?? new RelayCommand(ToWellcomePage) ; }
         }
 
 

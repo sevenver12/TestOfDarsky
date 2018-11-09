@@ -9,10 +9,21 @@
              lex:ResxLocalizationProvider.DefaultDictionary="Strings"
       xmlns:local="clr-namespace:TestOfDarksky_Bence_Szalma.View"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+     
       Title="WellcomePage">
 
     <Grid>
-        <TextBlock Foreground="White" Text="{lex:LocText Wellcome}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="White" Text="{lex:LocText Wellcome}"/>
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <TextBlock Margin="0,0,0,10" Foreground="White" HorizontalAlignment="Center" FontSize="15" Text="{lex:LocText LanguageSelection}" />
+            <ComboBox HorizontalAlignment="Center" ItemsSource="{Binding Source={x:Static lex:LocalizeDictionary.Instance}, Path=MergedAvailableCultures}"
+                          SelectedItem="{Binding Source={x:Static lex:LocalizeDictionary.Instance}, Path=Culture}" 
+                          DisplayMemberPath="NativeName" SelectionChanged="LangBox_SelectionChanged" />
+        </StackPanel>
     </Grid>
+    
 </Page>

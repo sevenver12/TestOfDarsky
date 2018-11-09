@@ -24,5 +24,10 @@ namespace TestOfDarksky_Bence_Szalma.View
         {
             InitializeComponent();
         }
+        private void LangBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Properties.Settings.Default.Culture = e.AddedItems[0].ToString();
+            Properties.Settings.Default.Save();
+        }
     }
 }
