@@ -75,7 +75,9 @@
     </Compile>
     <Compile Include="Converters\BoolToNegVisibility.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\DateTimeFromTicksConverter.cs" />
     <Compile Include="Converters\PercentageConverter.cs" />
+    <Compile Include="Converters\TemperatureAvarangeConverter.cs" />
     <Compile Include="Helper\AppSettingsHelper.cs" />
     <Compile Include="Helper\Json.cs" />
     <Compile Include="Helper\LocalizationHelper.cs" />

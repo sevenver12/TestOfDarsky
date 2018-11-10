@@ -162,4 +162,7 @@
   <data name="WindSpeedText" xml:space="preserve">
     <value>Szélsebesség</value>
   </data>
+  <data name="Error" xml:space="preserve">
+    <value>Hiba!</value>
+  </data>
 </root>

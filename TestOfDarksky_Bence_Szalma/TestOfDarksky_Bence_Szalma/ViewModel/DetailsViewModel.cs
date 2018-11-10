@@ -29,7 +29,7 @@ namespace TestOfDarksky_Bence_Szalma.ViewModel
         {
             _weatherService.TrackedCity = city;
             var result = await _weatherService.GetData();
-            CityInfo = result.FirstOrDefault(); ;
+            CityInfo = result.FirstOrDefault();
         }
         private CityInfo _cityInfo;
 

@@ -120,6 +120,9 @@
   <data name="ApparentTemperatureText" xml:space="preserve">
     <value>Apparent Temperature</value>
   </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error!</value>
+  </data>
   <data name="HumidityMeas" xml:space="preserve">
     <value>%</value>
   </data>

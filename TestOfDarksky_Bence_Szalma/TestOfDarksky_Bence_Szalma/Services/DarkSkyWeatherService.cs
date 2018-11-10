@@ -41,7 +41,14 @@ namespace TestOfDarksky_Bence_Szalma.Services
             if (cont.IsSuccessStatusCode)
             {
                 var stringResponse = await cont.Content.ReadAsStringAsync();
-                return await Json.ToObjectAsync<CityInfo>(stringResponse);
+                var info= await Json.ToObjectAsync<CityInfo>(stringResponse);
+                var dt = DateTime.Today;
+                foreach (var data in info.Daily.Data)
+                {
+                    data.Time = dt.Ticks;
+                   dt = dt.AddDays(1);
+                }
+                return info;
             }
             return null;
 

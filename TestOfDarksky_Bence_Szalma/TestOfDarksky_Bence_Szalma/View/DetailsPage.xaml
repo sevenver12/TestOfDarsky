@@ -7,7 +7,7 @@
              lex:LocalizeDictionary.DesignCulture="hu"
              lex:ResxLocalizationProvider.DefaultAssembly="TestOfDarksky_Bence_Szalma"
              lex:ResxLocalizationProvider.DefaultDictionary="Strings"
-      
+      xmlns:data="clr-namespace:TestOfDarksky_Bence_Szalma.Model"
       xmlns:local="clr-namespace:TestOfDarksky_Bence_Szalma.View"
       mc:Ignorable="d" 
       xmlns:converters="clr-namespace:TestOfDarksky_Bence_Szalma.Converters"
@@ -15,6 +15,8 @@
       Title="DetailsPage">
     <Page.Resources>
         <converters:PercentageConverter x:Key="PercentConverter"/>
+        <converters:TemperatureAvarangeConverter x:Key="TempAvgConverter"/>
+        <converters:DateTimeFromTicksConverter x:Key="TicksToDatetime"/>
     </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -94,6 +96,78 @@
                 </StackPanel>
             </StackPanel>
         </Grid>
-        <TextBlock  HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Bottom" Grid.Row="1" Margin="0,0,0,10" Text="{Binding CoppyRight}"/>
+        <ListView BorderBrush="Transparent" Grid.Row="1" Margin="0,25,0,20" ItemsSource="{Binding CityInfo.Daily.Data}"  Background="Transparent">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel  Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate DataType="{x:Type data:Datum}">
+                    <StackPanel>
+                        <TextBlock Foreground="White" FontWeight="Bold" Text="{Binding Time, Converter={StaticResource TicksToDatetime}}"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="40" Stretch="Fill" Source="/TestOfDarksky_Bence_Szalma;component/Resources/temperature.png" />
+                            <TextBlock Foreground="White" >
+                                <Run>
+                                    <Run.Text>
+                                              <MultiBinding Converter="{StaticResource TempAvgConverter}">
+                                                  <Binding Path="TemperatureLow"/>
+                                                  <Binding Path="TemperatureHigh"/>
+                                              </MultiBinding>
+                                    </Run.Text>
+                                 </Run>
+                                <Run Text="{lex:LocText TemperatureMeas}"/>
+                            </TextBlock>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="40" Stretch="Fill" Source="/TestOfDarksky_Bence_Szalma;component/Resources/temperature.png" />
+                            <TextBlock Foreground="White" >
+                                 <Run>
+                                    <Run.Text>
+                                              <MultiBinding Converter="{StaticResource TempAvgConverter}">
+                                                  <Binding Path="ApparentTemperatureLow"/>
+                                                  <Binding Path="ApparentTemperatureHigh"/>
+                                              </MultiBinding>
+                                    </Run.Text>
+                                 </Run>
+                            <Run Text="{lex:LocText TemperatureMeas}"/>
+                            </TextBlock>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="40" Stretch="Fill" Source="/TestOfDarksky_Bence_Szalma;component/Resources/atmospheric-pressure.png" />
+                            <TextBlock Foreground="White" >
+                                <Run Text="{Binding Pressure}"/>
+                                <Run Text="{lex:LocText PressureMeas}"/>
+                            </TextBlock>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="40" Stretch="Fill" Source="/TestOfDarksky_Bence_Szalma;component/Resources/WindSpeed.png" />
+                            <TextBlock Foreground="White" >
+                                <Run Text="{Binding WindSpeed}"/>
+                                <Run Text="{lex:LocText WindSpeedMeas}"/>
+                            </TextBlock>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="40" Stretch="Fill" Source="/TestOfDarksky_Bence_Szalma;component/Resources/Humidity.png" />
+                            <TextBlock Foreground="White" >
+                                <Run Text="{Binding Humidity, Converter={StaticResource PercentConverter}}"/>
+                                <Run Text="{lex:LocText HumidityMeas}"/>
+                            </TextBlock>
+                        </StackPanel>
+                      
+                        
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="40" Stretch="Fill" Source="/TestOfDarksky_Bence_Szalma;component/Resources/uvIndex.png" />
+                            <TextBlock Foreground="White"  >
+                                <Run Text="{Binding UvIndex}"/> 
+                                <Run Text="{lex:LocText UvIndexMeas}"/>
+                            </TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBlock   HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Bottom" Grid.Row="1" Margin="0,0,0,5" Text="{Binding CoppyRight}"/>
     </Grid>
 </Page>
