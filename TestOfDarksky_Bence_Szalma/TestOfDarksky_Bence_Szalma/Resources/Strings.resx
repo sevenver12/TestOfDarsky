@@ -129,9 +129,6 @@
   <data name="LanguageSelection" xml:space="preserve">
     <value>Válassza ki az aplikáció nyelvezetét</value>
   </data>
-  <data name="PressureMeas" xml:space="preserve">
-    <value>hPa</value>
-  </data>
   <data name="PressureText" xml:space="preserve">
     <value>Nyomás</value>
   </data>
@@ -156,7 +153,7 @@
   <data name="Wellcome" xml:space="preserve">
     <value>Ez az aplikáció a Docler Holding nevű cég "felvételi" teszt aplikációja, kérem az őszinte viszajelzését, az applikációval kapcsolatban</value>
   </data>
-  <data name="WindSpeedMeas" xml:space="preserve">
+  <data name="WindSpeedMeasSi" xml:space="preserve">
     <value>kph</value>
   </data>
   <data name="WindSpeedText" xml:space="preserve">
@@ -164,5 +161,14 @@
   </data>
   <data name="Error" xml:space="preserve">
     <value>Hiba!</value>
+  </data>
+  <data name="PressureMeasSi" xml:space="preserve">
+    <value>mb</value>
+  </data>
+  <data name="PressureMeasUs" xml:space="preserve">
+    <value>hPa</value>
+  </data>
+  <data name="WindSpeedMeasUs" xml:space="preserve">
+    <value>mph</value>
   </data>
 </root>

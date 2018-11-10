@@ -106,11 +106,20 @@ namespace TestOfDarksky_Bence_Szalma.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to mb.
+        /// </summary>
+        public static string PressureMeasSi {
+            get {
+                return ResourceManager.GetString("PressureMeasSi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to hPa.
         /// </summary>
-        public static string PressureMeas {
+        public static string PressureMeasUs {
             get {
-                return ResourceManager.GetString("PressureMeas", resourceCulture);
+                return ResourceManager.GetString("PressureMeasUs", resourceCulture);
             }
         }
         
@@ -189,9 +198,18 @@ namespace TestOfDarksky_Bence_Szalma.Resources {
         /// <summary>
         ///   Looks up a localized string similar to kph.
         /// </summary>
-        public static string WindSpeedMeas {
+        public static string WindSpeedMeasSi {
             get {
-                return ResourceManager.GetString("WindSpeedMeas", resourceCulture);
+                return ResourceManager.GetString("WindSpeedMeasSi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to mph.
+        /// </summary>
+        public static string WindSpeedMeasUs {
+            get {
+                return ResourceManager.GetString("WindSpeedMeasUs", resourceCulture);
             }
         }
         

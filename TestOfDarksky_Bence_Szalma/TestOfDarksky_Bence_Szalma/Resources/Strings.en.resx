@@ -132,7 +132,7 @@
   <data name="LanguageSelection" xml:space="preserve">
     <value>Select the language of the application</value>
   </data>
-  <data name="PressureMeas" xml:space="preserve">
+  <data name="PressureMeasSi" xml:space="preserve">
     <value>mb</value>
   </data>
   <data name="PressureText" xml:space="preserve">
@@ -160,10 +160,16 @@
     <value>This application is made for the application to Docler Holding.
 I would appreciate the honest feedback.</value>
   </data>
-  <data name="WindSpeedMeas" xml:space="preserve">
+  <data name="WindSpeedMeasUs" xml:space="preserve">
     <value>mph</value>
   </data>
   <data name="WindSpeedText" xml:space="preserve">
     <value>Wind Speed</value>
+  </data>
+  <data name="PressureMeasUs" xml:space="preserve">
+    <value>hPa</value>
+  </data>
+  <data name="WindSpeedMeasSi" xml:space="preserve">
+    <value>kph</value>
   </data>
 </root>
