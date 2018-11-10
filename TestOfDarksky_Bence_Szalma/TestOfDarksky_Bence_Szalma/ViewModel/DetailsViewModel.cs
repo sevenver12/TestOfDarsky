@@ -1,5 +1,6 @@
-﻿using System; 
+﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,14 @@ namespace TestOfDarksky_Bence_Szalma.ViewModel
         public DetailsViewModel(IWeatherService weatherService)
         {
             _weatherService = weatherService ?? throw new ArgumentNullException(nameof(weatherService));
+            ///Must, if there will be new languages implemented
+            Units = new ObservableCollection<MeasurementUnit>()
+            {
+                new MeasurementUnit{Key = "SIUnit", Value =  LocalizationHelper.GetLocalizedValue<string>("SIUnit") },
+                new MeasurementUnit{Key = "ImperialUnit", Value = LocalizationHelper.GetLocalizedValue<string>("ImperialUnit") },
+            };
+            SelectedUnit = Units.FirstOrDefault(fod => fod.Key == Properties.Settings.Default.Unit) ?? Units.First();
+
         }
         internal async Task GetData(City city)
         {
@@ -23,6 +32,27 @@ namespace TestOfDarksky_Bence_Szalma.ViewModel
             CityInfo = result.FirstOrDefault(); ;
         }
         private CityInfo _cityInfo;
+
+        public ObservableCollection<MeasurementUnit> Units { get; set; }
+
+        private MeasurementUnit _selectedUnit;
+
+        public MeasurementUnit SelectedUnit
+        {
+            get { return _selectedUnit; }
+            set
+            {
+                Set(ref _selectedUnit, value,ChangeUnits);
+            }
+        }
+        
+        private async void ChangeUnits()
+        {
+            Properties.Settings.Default.Unit = SelectedUnit.Key;
+            Properties.Settings.Default.Save();
+            await GetData(_weatherService.TrackedCity);
+        }
+
 
         public string CoppyRight { get => _weatherService.CopyRightInfo; }
 

@@ -117,11 +117,50 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ApparentTemperatureText" xml:space="preserve">
+    <value>Apparent Temperature</value>
+  </data>
+  <data name="HumidityMeas" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="HumidityText" xml:space="preserve">
+    <value>Humidity</value>
+  </data>
+  <data name="ImperialUnit" xml:space="preserve">
+    <value>°F,mph</value>
+  </data>
   <data name="LanguageSelection" xml:space="preserve">
     <value>Select the language of the application</value>
+  </data>
+  <data name="PressureMeas" xml:space="preserve">
+    <value>mb</value>
+  </data>
+  <data name="PressureText" xml:space="preserve">
+    <value>Pressure</value>
+  </data>
+  <data name="SIUnit" xml:space="preserve">
+    <value>°C,km/h</value>
+  </data>
+  <data name="TemperatureMeas" xml:space="preserve">
+    <value>°</value>
+  </data>
+  <data name="TemperatureText" xml:space="preserve">
+    <value>Temperature</value>
+  </data>
+  <data name="UvIndexMeas" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UvIndexText" xml:space="preserve">
+    <value>Uv Index</value>
   </data>
   <data name="Wellcome" xml:space="preserve">
     <value>This application is made for the application to Docler Holding.
 I would appreciate the honest feedback.</value>
+  </data>
+  <data name="WindSpeedMeas" xml:space="preserve">
+    <value>mph</value>
+  </data>
+  <data name="WindSpeedText" xml:space="preserve">
+    <value>Wind Speed</value>
   </data>
 </root>

@@ -75,8 +75,10 @@
     </Compile>
     <Compile Include="Converters\BoolToNegVisibility.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\PercentageConverter.cs" />
     <Compile Include="Helper\AppSettingsHelper.cs" />
     <Compile Include="Helper\Json.cs" />
+    <Compile Include="Helper\LocalizationHelper.cs" />
     <Compile Include="Helper\ObservableObject.cs" />
     <Compile Include="Helper\RelayCommand.cs" />
     <Compile Include="Interfaces\ICountryService.cs" />
@@ -90,6 +92,7 @@
     <Compile Include="Model\Daily.cs" />
     <Compile Include="Model\Datum.cs" />
     <Compile Include="Model\GeoLoc.cs" />
+    <Compile Include="Model\MeasurementUnit.cs" />
     <Compile Include="Services\DarkSkyWeatherService.cs" />
     <Compile Include="Services\DumyCountryService.cs" />
     <Compile Include="ViewModel\DetailsViewModel.cs" />
@@ -160,6 +163,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\temperature.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\atmospheric-pressure.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WindSpeed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Humidity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\uvIndex.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

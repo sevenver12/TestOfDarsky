@@ -34,5 +34,17 @@ namespace TestOfDarksky_Bence_Szalma.Properties {
                 this["Culture"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("SIUnit")]
+        public string Unit {
+            get {
+                return ((string)(this["Unit"]));
+            }
+            set {
+                this["Unit"] = value;
+            }
+        }
     }
 }

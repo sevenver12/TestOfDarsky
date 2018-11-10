@@ -23,16 +23,17 @@ namespace TestOfDarksky_Bence_Szalma.Services
         public async Task<IEnumerable<CityInfo>> GetData()
         {
             if (TrackedCity == null) return null;
+            var lang = TestOfDarksky_Bence_Szalma.Properties.Settings.Default.Culture;
+            var units = TestOfDarksky_Bence_Szalma.Properties.Settings.Default.Unit;
             using (HttpClient client = new HttpClient())
             {
-                return new List<CityInfo> { await GetCityInfo(client) };
+                return new List<CityInfo> { await GetCityInfo(client, lang,units) };
             }
         }
 
-        private async Task<CityInfo> GetCityInfo(HttpClient client)
+        private async Task<CityInfo> GetCityInfo(HttpClient client,string lang, string units)
         {
-            var lang = TestOfDarksky_Bence_Szalma.Properties.Settings.Default.Culture;
-            var req = new Uri($"https://api.darksky.net/forecast/{_apiSecret}/{TrackedCity.Lat},{TrackedCity.Lon}?lang={lang}&exclude=flags,minutely,hourly");
+            var req = new Uri($"https://api.darksky.net/forecast/{_apiSecret}/{TrackedCity.Lat},{TrackedCity.Lon}?lang={lang}&exclude=flags,minutely,hourly&units={units}");
             var cont = await client.GetAsync(req);
             if (cont.IsSuccessStatusCode)
             {

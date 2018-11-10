@@ -61,6 +61,42 @@ namespace TestOfDarksky_Bence_Szalma.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Érezhető hőmérséklet.
+        /// </summary>
+        public static string ApparentTemperatureText {
+            get {
+                return ResourceManager.GetString("ApparentTemperatureText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to %.
+        /// </summary>
+        public static string HumidityMeas {
+            get {
+                return ResourceManager.GetString("HumidityMeas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Páratartam.
+        /// </summary>
+        public static string HumidityText {
+            get {
+                return ResourceManager.GetString("HumidityText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to °F,mph.
+        /// </summary>
+        public static string ImperialUnit {
+            get {
+                return ResourceManager.GetString("ImperialUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Válassza ki az aplikáció nyelvezetét.
         /// </summary>
         public static string LanguageSelection {
@@ -70,11 +106,92 @@ namespace TestOfDarksky_Bence_Szalma.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to hPa.
+        /// </summary>
+        public static string PressureMeas {
+            get {
+                return ResourceManager.GetString("PressureMeas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nyomás.
+        /// </summary>
+        public static string PressureText {
+            get {
+                return ResourceManager.GetString("PressureText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to °C,km/h.
+        /// </summary>
+        public static string SIUnit {
+            get {
+                return ResourceManager.GetString("SIUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to °.
+        /// </summary>
+        public static string TemperatureMeas {
+            get {
+                return ResourceManager.GetString("TemperatureMeas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hőmérséklet.
+        /// </summary>
+        public static string TemperatureText {
+            get {
+                return ResourceManager.GetString("TemperatureText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string UvIndexMeas {
+            get {
+                return ResourceManager.GetString("UvIndexMeas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uv Index.
+        /// </summary>
+        public static string UvIndexText {
+            get {
+                return ResourceManager.GetString("UvIndexText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ez az aplikáció a Docler Holding nevű cég &quot;felvételi&quot; teszt aplikációja, kérem az őszinte viszajelzését, az applikációval kapcsolatban.
         /// </summary>
         public static string Wellcome {
             get {
                 return ResourceManager.GetString("Wellcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to kph.
+        /// </summary>
+        public static string WindSpeedMeas {
+            get {
+                return ResourceManager.GetString("WindSpeedMeas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Szélsebesség.
+        /// </summary>
+        public static string WindSpeedText {
+            get {
+                return ResourceManager.GetString("WindSpeedText", resourceCulture);
             }
         }
     }
