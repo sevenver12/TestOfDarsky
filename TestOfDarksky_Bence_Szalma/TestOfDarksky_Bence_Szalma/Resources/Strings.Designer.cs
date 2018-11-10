@@ -88,15 +88,6 @@ namespace TestOfDarksky_Bence_Szalma.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to °F,mph.
-        /// </summary>
-        public static string ImperialUnit {
-            get {
-                return ResourceManager.GetString("ImperialUnit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Válassza ki az aplikáció nyelvezetét.
         /// </summary>
         public static string LanguageSelection {
@@ -126,9 +117,9 @@ namespace TestOfDarksky_Bence_Szalma.Resources {
         /// <summary>
         ///   Looks up a localized string similar to °C,km/h.
         /// </summary>
-        public static string SIUnit {
+        public static string si {
             get {
-                return ResourceManager.GetString("SIUnit", resourceCulture);
+                return ResourceManager.GetString("si", resourceCulture);
             }
         }
         
@@ -147,6 +138,15 @@ namespace TestOfDarksky_Bence_Szalma.Resources {
         public static string TemperatureText {
             get {
                 return ResourceManager.GetString("TemperatureText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to °F,mph.
+        /// </summary>
+        public static string us {
+            get {
+                return ResourceManager.GetString("us", resourceCulture);
             }
         }
         

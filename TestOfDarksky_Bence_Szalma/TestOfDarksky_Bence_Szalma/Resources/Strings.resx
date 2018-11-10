@@ -126,9 +126,6 @@
   <data name="HumidityText" xml:space="preserve">
     <value>Páratartam</value>
   </data>
-  <data name="ImperialUnit" xml:space="preserve">
-    <value>°F,mph</value>
-  </data>
   <data name="LanguageSelection" xml:space="preserve">
     <value>Válassza ki az aplikáció nyelvezetét</value>
   </data>
@@ -138,7 +135,7 @@
   <data name="PressureText" xml:space="preserve">
     <value>Nyomás</value>
   </data>
-  <data name="SIUnit" xml:space="preserve">
+  <data name="si" xml:space="preserve">
     <value>°C,km/h</value>
   </data>
   <data name="TemperatureMeas" xml:space="preserve">
@@ -146,6 +143,9 @@
   </data>
   <data name="TemperatureText" xml:space="preserve">
     <value>Hőmérséklet</value>
+  </data>
+  <data name="us" xml:space="preserve">
+    <value>°F,mph</value>
   </data>
   <data name="UvIndexMeas" xml:space="preserve">
     <value />

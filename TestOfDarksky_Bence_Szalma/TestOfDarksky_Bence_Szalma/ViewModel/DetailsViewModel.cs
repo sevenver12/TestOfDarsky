@@ -19,10 +19,10 @@ namespace TestOfDarksky_Bence_Szalma.ViewModel
             ///Must, if there will be new languages implemented
             Units = new ObservableCollection<MeasurementUnit>()
             {
-                new MeasurementUnit{Key = "SIUnit", Value =  LocalizationHelper.GetLocalizedValue<string>("SIUnit") },
-                new MeasurementUnit{Key = "ImperialUnit", Value = LocalizationHelper.GetLocalizedValue<string>("ImperialUnit") },
+                new MeasurementUnit{Key = "si", Value =  LocalizationHelper.GetLocalizedValue<string>("si") },
+                new MeasurementUnit{Key = "us", Value = LocalizationHelper.GetLocalizedValue<string>("us") },
             };
-            SelectedUnit = Units.FirstOrDefault(fod => fod.Key == Properties.Settings.Default.Unit) ?? Units.First();
+            _selectedUnit = Units.FirstOrDefault(fod => fod.Key == Properties.Settings.Default.Unit) ?? Units.First();
 
         }
         internal async Task GetData(City city)

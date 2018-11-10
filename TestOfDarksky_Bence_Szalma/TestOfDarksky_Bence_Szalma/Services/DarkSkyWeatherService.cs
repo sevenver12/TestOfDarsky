@@ -8,6 +8,8 @@ using TestOfDarksky_Bence_Szalma.Interfaces;
 using TestOfDarksky_Bence_Szalma.Model;
 using TestOfDarksky_Bence_Szalma.Helper;
 using System.Configuration;
+using System.Globalization;
+
 namespace TestOfDarksky_Bence_Szalma.Services
 {
     public class DarkSkyWeatherService : IWeatherService
@@ -33,7 +35,8 @@ namespace TestOfDarksky_Bence_Szalma.Services
 
         private async Task<CityInfo> GetCityInfo(HttpClient client,string lang, string units)
         {
-            var req = new Uri($"https://api.darksky.net/forecast/{_apiSecret}/{TrackedCity.Lat},{TrackedCity.Lon}?lang={lang}&exclude=flags,minutely,hourly&units={units}");
+            NumberFormatInfo nfi = new CultureInfo("en-US", false).NumberFormat;
+            var req = new Uri($"https://api.darksky.net/forecast/{_apiSecret}/{TrackedCity.Lat.ToString("N", nfi)},{TrackedCity.Lon.ToString("N",nfi)}?lang={lang}&exclude=flags,minutely,hourly&units={units}");
             var cont = await client.GetAsync(req);
             if (cont.IsSuccessStatusCode)
             {
