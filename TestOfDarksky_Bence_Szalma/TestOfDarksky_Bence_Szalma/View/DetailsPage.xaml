@@ -76,7 +76,7 @@
                     <TextBlock Foreground="White"  Text="{lex:LocText WindSpeedText}"/>
                     <TextBlock Foreground="White" >
                         <Run Text="{Binding WindSpeed}"/>
-                        <Run Text="{Binding ElementName=page,XPath=DataContext.SelectedUnit.WindSpeed}"/>
+                        <Run Text="{Binding ElementName=page, Path=DataContext.SelectedUnit.WindSpeed}"/>
                     </TextBlock>
                 </StackPanel>
             </StackPanel>
